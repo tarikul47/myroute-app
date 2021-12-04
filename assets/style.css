@@ -327,7 +327,7 @@ input[type="submit"] {
   margin-top: 0.4em;
 }
 
-.new-task-button a {
+.new-task-button span {
   text-decoration: none;
   border-radius: 5px;
   padding: 0.5em;

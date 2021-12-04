@@ -11,10 +11,10 @@ router.use(function timeLog (req, res, next) {
 })
 
 // define the about route
-router.get('/', controller.routeGet)
+router.get('/', controller.getTaskRoute)
 
 // define the about route
-router.post('/about', controller.routeAboutGet)
+router.post('/task', controller.postTaskRoute)
 
 
 
