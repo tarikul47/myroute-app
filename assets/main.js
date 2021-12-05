@@ -7,7 +7,7 @@ updateTaskForm.onsubmit = (e) => {
   console.log(formData.get("task_id"));
   const task_id = formData.get("task_id");
 
-  fetch(`http://localhost:5000/task/${task_id}`, {
+  fetch(`https://boiling-depths-24554.herokuapp.com/task/${task_id}`, {
     method: "PUT",
     body: formData,
   })
@@ -23,7 +23,7 @@ updateTaskForm.onsubmit = (e) => {
 
 function deleteTask(id) {
   if (confirm("Are you sure to delete the task?")) {
-    fetch(`http://localhost:5000/task/${id}`, {
+    fetch(`https://boiling-depths-24554.herokuapp.com/task/${id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -37,7 +37,7 @@ function deleteTask(id) {
 
 function taskStatus(id) {
   if (confirm("Are you sure to complete the task?")) {
-    fetch(`http://localhost:5000/task/status/${id}`, {
+    fetch(`https://boiling-depths-24554.herokuapp.com/task/status/${id}`, {
       method: "PUT",
     })
       .then((response) => response.json())
