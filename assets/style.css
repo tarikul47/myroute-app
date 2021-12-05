@@ -257,17 +257,19 @@ input[type="submit"] {
 .delete,
 .update {
   font-size: 1.4rem;
+  cursor: pointer;
 }
-.delete a {
+.delete span {
   margin-left: 0.8em;
   color: #f12727;
 }
 
-.update a {
+.update span {
   color: rgb(0, 162, 255);
+  cursor: pointer;
 }
 
-.completed p {
+.completed span {
   color: gray;
   text-decoration: line-through;
 }
