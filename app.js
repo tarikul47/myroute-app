@@ -1,11 +1,16 @@
 const express = require('express');
 const app = express();
+const morgan = require("morgan");
+
+// for env file support
+require("dotenv").config();
+
 const mongoose = require("mongoose");
 
 const port = process.env.PORT || 5000;
 
 
-//app.use(morgan('dev'));
+app.use(morgan('dev'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
@@ -24,7 +29,7 @@ app.use('/', routes);
 
 // database conncet and server listen
 mongoose
-  .connect("mongodb://localhost:27017/task")
+  .connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.dyvua.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`)
   .then(() => {
     app.listen(port, () => {
       console.log("Application is ready to serve on port", port);
