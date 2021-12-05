@@ -319,6 +319,10 @@ input[type="submit"] {
 }
 
 /* ---------new-task-button----------- */
+button.new-task-button span a {
+  text-decoration: none;
+  color: #fff;
+}
 
 #updateTaskForm textarea#description {
   color: #fff;
