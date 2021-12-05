@@ -47,7 +47,6 @@
                                 <%= task.name %>
                             </p>
                             <div class="task-update-delete">
-
                                 <div id="taskUpdate" class="update">
                                     <a href="/task/<%= task._id %>">
                                         <i class="fas fa-pen-square"></i>
@@ -61,36 +60,7 @@
                             </div>
                         </div>
                         <% } %>
-                            <div class="tasks completed">
-                                <p>Fix the bookshelf</p>
-                                <div class="task-update-delete">
-                                    <div class="update">
-                                        <span href="#">
-                                            <i class="fas fa-pen-square"></i>
-                                        </span>
-                                    </div>
-                                    <div class="delete">
-                                        <span href="#">
-                                            <i class="fas fa-times-circle"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tasks completed">
-                                <p>Buy some apples</p>
-                                <div class="task-update-delete">
-                                    <div class="update">
-                                        <span href="#">
-                                            <i class="fas fa-pen-square"></i>
-                                        </span>
-                                    </div>
-                                    <div class="delete">
-                                        <span href="#">
-                                            <i class="fas fa-times-circle"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+
                 </div>
             </div>
 
@@ -141,7 +111,9 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Send message</button>
+                            <button type="submit"data-bs-whatever="@getbootstrap" class="new-task-button">
+                                <span>Send message</span>
+                            </button>
                         </div>
 
                     </form>

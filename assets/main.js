@@ -1,20 +1,4 @@
-alert("Connected");
-
-//task added operation
-addTaskForm.onsubmit = (e) => {
-  e.preventDefault();
-  const formData = new URLSearchParams(new FormData(addTaskForm));
-  console.log(formData);
-
-  fetch("http://localhost:5000/task", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-  e.target.reset();
-  console.log("Something");
-};
+// alert("Connected");
 
 //task added operation
 updateTaskForm.onsubmit = (e) => {
@@ -28,12 +12,17 @@ updateTaskForm.onsubmit = (e) => {
     body: formData,
   })
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => {
+      if (data.modifiedCount) {
+        alert("Yes updated");
+        location.reload();
+      }
+    });
   e.target.reset();
 };
 
 function deleteTask(id) {
-  if (confirm('Are you sure to delete the task?')) {
+  if (confirm("Are you sure to delete the task?")) {
     fetch(`http://localhost:5000/task/${id}`, {
       method: "DELETE",
     })
@@ -45,3 +34,19 @@ function deleteTask(id) {
       });
   }
 }
+
+function taskStatus(id) {
+  if (confirm("Are you sure to complete the task?")) {
+    fetch(`http://localhost:5000/task/status/${id}`, {
+      method: "PUT",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.deletedCount) {
+          location.reload();
+        }
+      });
+  }
+}
+
+

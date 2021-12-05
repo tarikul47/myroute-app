@@ -19,6 +19,7 @@ exports.postTaskRoute = async (req, res) => {
     description,
     option,
   });
+
   try {
     await task.save();
     res.redirect("/");
@@ -45,24 +46,30 @@ exports.updateSingleTaskRoute = async (req, res) => {
   let { name, description, option } = req.body;
 
   try {
-    let task = await Task.findById(id)
-
-    const result = await Task.updateOne({ _id: task._id }, { $set: { name, description, option } });
-    //res.redirect('/')
-    res.json(result)
-
+    let task = await Task.findById(id);
+    const result = await Task.updateOne(
+      { _id: task._id },
+      { $set: { name, description, option } }
+    );
+    res.json(result);
   } catch (e) {
     console.log(e);
   }
 };
 
-
 // define the delete single task
 exports.deleteSingleTaskRoute = async (req, res) => {
   let id = req.params.id;
   console.log(id);
-  let task = await Task.findById(id)
+  let task = await Task.findById(id);
   const result = await Task.deleteOne({ _id: task._id });
-  res.json(result)
+  res.json(result);
+};
 
+
+// define the delete single task
+exports.statusSingleTaskRoute = async (req, res) => {
+  let id = req.params.id;
+  console.log(id);
+  res.json(result);
 };

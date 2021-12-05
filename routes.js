@@ -20,7 +20,10 @@ router.post('/task', controller.postTaskRoute)
 router.get('/task/:id', controller.getSingleTaskRoute)
 
 // define the single task update route
-router.post('/task/:id', controller.updateSingleTaskRoute)
+router.put('/task/:id', controller.updateSingleTaskRoute)
+
+// define the single task update route
+router.put('/task/status/:id', controller.statusSingleTaskRoute)
 
 // define the single task delete route
 router.delete('/task/:id', controller.deleteSingleTaskRoute)

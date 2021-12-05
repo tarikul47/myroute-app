@@ -39,7 +39,8 @@
             </div>
 
             <div class="uppertaskarea">
-                <form action="/task/<%= stasks._id %>" method="post">
+                <form id="updateTaskForm">
+                    <input type="hidden" name="task_id" value="<%= stasks._id %>">
                     <div class="mb-3">
                         <label for="task-name" class="col-form-label">Task:</label>
                         <input id="name" type="text" value="<%= stasks.name %>" name="name" class="form-control tasks">
@@ -53,84 +54,33 @@
                         <label for="message-text" class="col-form-label">Task Type:</label>
                         <div class="form-check form-check-inline">
                             <input id="option" class="form-check-input" name="option" value="normal" type="radio"
-                                name="inlineRadioOptions" id="inlineRadio1"  <%if (stasks.option == 'normal') {%>  checked  <%}%> >
-                            <label class="form-check-label" for="inlineRadio1">Normal</label>
+                                name="inlineRadioOptions" id="inlineRadio1" <%if (stasks.option=='normal' ) {%> checked
+                            <%}%> >
+                                <label class="form-check-label" for="inlineRadio1">Normal</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input id="option" class="form-check-input" name="option" value="medium" type="radio"
-                                name="inlineRadioOptions" id="inlineRadio2" <%if (stasks.option == 'medium') {%>  checked  <%}%> >
-                            <label class="form-check-label" for="inlineRadio2">Medium</label>
+                                name="inlineRadioOptions" id="inlineRadio2" <%if (stasks.option=='medium' ) {%> checked
+                            <%}%> >
+                                <label class="form-check-label" for="inlineRadio2">Medium</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input id="option" class="form-check-input" name="option" value="urgent" type="radio"
-                                name="inlineRadioOptions" id="inlineRadio3" <%if (stasks.option == 'urgent') {%>  checked  <%}%>>
-                            <label class="form-check-label" id="inlineRadio3" for="inlineRadio2">Urgent</label>
+                                name="inlineRadioOptions" id="inlineRadio3" <%if (stasks.option=='urgent' ) {%> checked
+                            <%}%>>
+                                <label class="form-check-label" id="inlineRadio3" for="inlineRadio2">Urgent</label>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Send message</button>
+                        <button type="submit"data-bs-whatever="@getbootstrap" class="new-task-button">
+                            <span>Send message</span>
+                        </button>
                     </div>
 
-                </form>   
-            </div>
-
-            <div type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"
-                class="new-task-button">
-                <span>Add Task</span>
+                </form>
             </div>
         </div>
     </div>
-
-    <!-- Task added  -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content box-model">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <form id="addTaskForm">
-                        <div class="mb-3">
-                            <label for="task-name" class="col-form-label">Task:</label>
-                            <input id="name" type="text" name="name" class="form-control tasks">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Description:</label>
-                            <textarea id="description" name="description" class="form-control tasks"
-                                id="message-text"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Task Type:</label>
-                            <div class="form-check form-check-inline">
-                                <input id="option" class="form-check-input" name="option" value="normal" type="radio"
-                                    name="inlineRadioOptions" id="inlineRadio1">
-                                <label class="form-check-label" for="inlineRadio1">Normal</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input id="option" class="form-check-input" name="option" value="medium" type="radio"
-                                    name="inlineRadioOptions" id="inlineRadio2">
-                                <label class="form-check-label" for="inlineRadio2">Medium</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input id="option" class="form-check-input" name="option" value="urgent" type="radio"
-                                    name="inlineRadioOptions" id="inlineRadio3">
-                                <label class="form-check-label" id="inlineRadio3" for="inlineRadio2">Urgent</label>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Send message</button>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 

@@ -126,7 +126,7 @@ input[type="text"] {
   width: 75%;
   margin-bottom: 1.2em;
   font-size: 1rem;
-  background: rgba(0, 0, 0, 0.4);
+  /* background: rgba(0, 0, 0, 0.4); */
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(0.5px);
   -webkit-backdrop-filter: blur(0.5px);
@@ -320,6 +320,12 @@ input[type="submit"] {
 
 /* ---------new-task-button----------- */
 
+#updateTaskForm textarea#description {
+  color: #fff;
+}
+#updateTaskForm input[type="text"] {
+  width: 90%;
+}
 .new-task-button {
   border-radius: 5px;
   height: 9%;
@@ -327,6 +333,10 @@ input[type="submit"] {
   justify-content: flex-end;
   align-items: center;
   margin-top: 0.4em;
+}
+button.new-task-button {
+  background: transparent;
+  border: none;
 }
 
 .new-task-button span {
